@@ -1,4 +1,3 @@
-package tradingRiskManager;
 import java.util.Scanner;
 
 public class TradingRiskManagerV2 {
