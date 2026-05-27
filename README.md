@@ -2,67 +2,77 @@
 
 Trading Risk Manager is a Java console application developed while learning Java programming fundamentals.
 
-The project evolved through three versions, each adding new features and more advanced programming concepts.
+The project evolved through four versions, each introducing more advanced programming concepts and trading-related calculations.
 
 ## Version 1 Features
-- Calculates maximum allowed risk using the 2% risk rule
+- Calculates maximum allowed risk using the 2% rule
 - Calculates risk percentage of account
 - Calculates reward-to-risk ratio
-- Approves or rejects trades based on risk limits
+- Approves or rejects trades
 - Single-trade analysis
 
 ## Version 2 Features
-- Analyze multiple trades in one session
-- Track total risk across all trades
-- Count approved trades
-- Count rejected trades
+- Multi-trade analysis
+- Running total risk tracking
+- Approved/rejected trade counters
 - Trade-by-trade analysis using loops
-- Running totals and counters
 
 ## Version 3 Features
 - Position sizing calculator
 - Risk-per-share calculation
-- 2% account risk management
-- Multiple trade analysis
 - Entry and stop-loss validation
 - Rounded position size recommendations
-- Support for decimal stock prices
+- Multiple trade processing
+
+## Version 4 Features
+- Dynamic trade storage using arrays
+- Total risk calculation
+- Highest risk tracking
+- Lowest risk tracking
+- Average risk calculation
+- Methods that process arrays
+- Dynamic loops using array.length
+- Reusable statistics methods
 
 ## Built Using
 - Java
 - Eclipse IDE
 - Scanner for user input
 - Methods
-- If/Else statements
+- Arrays
 - For loops
 - While loops
+- If/Else statements
 - Mathematical calculations
-- Input validation
+- Formatted decimal output
 
-## Example V3 Output
+## Example Output
 
-Enter account size: 10000
-How many trades do you want to analyze? 1
+How many trades? 3
 
-Trade #1
-Enter entry price: 100
-Enter stop loss price: 98
+Enter risk for trade #1: 100
+Enter risk for trade #2: 250
+Enter risk for trade #3: 75
 
-Trade #1 Results
------------------------
-Maximum Allowed Risk: $200.00
-Risk Per Share: $2.00
-Recommended Position Size: 100
-Valid stop loss
+Stored Risks:
+Risk #1: 100
+Risk #2: 250
+Risk #3: 75
+
+Total Risk: 425
+Highest Risk: 250
+Lowest Risk: 75
+Average Risk: 141.67
 
 ## Concepts Practiced
 - Variables and data types
 - User input with Scanner
-- Methods and return values
 - Conditional statements
-- For loops
-- While loops
+- Methods and return values
+- Arrays
 - Running totals
-- Counters
-- Input validation
-- Financial calculations
+- Highest/lowest value tracking
+- Average calculations
+- Array processing with methods
+- Code refactoring
+- Reusable program design
