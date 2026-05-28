@@ -1,9 +1,9 @@
-package tradingRiskManager;
 import java.util.Scanner;
 
 public class TradingRiskManagerV4 {
 	
-	public static int totalRisk(int[] risks)
+	// Calculates users Total Risk
+	public static int totalRisk(int[] risks) 
 	{
 		int total = 0;
 		for(int i = 0; i < risks.length; i++)
@@ -12,7 +12,9 @@ public class TradingRiskManagerV4 {
 		}
 		return total;
 	}
-	public static int highestRisk(int[] risks)
+	
+	// Calculates users highest risk
+	public static int highestRisk(int[] risks) 
 	{
 		int highest = 0;
 		for(int i = 0; i < risks.length; i++)
@@ -25,7 +27,9 @@ public class TradingRiskManagerV4 {
 		}
 		return highest;
 	}
-	public static int lowestRisk(int[] risks)
+	
+	// Calculates users lowest risk
+	public static int lowestRisk(int[] risks) 
 	{
 		int lowest = risks[0];
 		for(int i = 0; i < risks.length; i++)
@@ -37,35 +41,114 @@ public class TradingRiskManagerV4 {
 		}
 		return lowest;
 	}
-	public static double averageRisk(int[]risks)
+	
+	// Calculates average risk through all trades
+	public static double averageRisk(int[]risks) 
 	{
 		return (double) totalRisk(risks) / risks.length;
 	}
+	
+	// Returns number of high risk trades taken
+	public static int highRiskTradeCount(int[] risks) 
+	{
+		int highTrades = 0;
+		for(int i = 0; i < risks.length; i++)
+		{
+			if(risks[i] >= 200)
+			{
+				highTrades++;
+			}
+		}
+		return highTrades;
+	}
+	
+	// Return which trade had the most risk
+	public static int highestRiskIndex(int[] risks) 
+	{
+		int index = 0;
+		int highest = risks[0];
+		for(int i = 0; i < risks.length; i++)
+		{
+			if(risks[i] > highest)
+			{
+				highest = risks[i];
+				index = i;
+			}
+		}
+		return index;
+	}
+	
+	//Calculates users Risk:Reward Ratio
+	public static void rewardRiskRatio(double[]rewards, int[]risks)
+	{
+		for(int i = 0; i < risks.length; i++)
+		{
+			double ratio = 0;
+			ratio = rewards[i] / risks[i];
+			System.out.printf("Trade #%d Ratio: %.2f%n",(i + 1),ratio);
+		}
+		
+	}
 	public static void main(String[] args) {
+		//Scanner for user input
 		Scanner input = new Scanner(System.in);
+		
+		//User chooses number of trades
 		System.out.print("How many trades?");
 		int trades = input.nextInt();
-		int[]risks = new int[trades];		
+		
+		//Arrays storing risk and reward values
+		int[]risks = new int[trades];	
+		double[]rewards = new double[trades];
+		
+		//Collect trade information
 		for(int i = 0; i < risks.length; i++)
 		{
 			System.out.print("Enter risk for trade #" + (i + 1) + ":");
 			risks[i] = input.nextInt();
+			System.out.print("Enter your targeted reward:");
+			rewards[i]= input.nextInt();
+			
+			if(risks[i] <= 99)
+			{
+				System.out.println("Low Risk");
+			}
+			else if(risks[i] <= 199)
+			{
+				System.out.println("Medium Risk");
+			}
+			else
+			{
+				System.out.println("High Risk");
+			}
 		}
-		System.out.println("Stored Risks:");
+		
+		//Display Risk:Reward Ratio
+		System.out.println("\nRisk/Reward Ratio");
+		System.out.println("------------------");
+		rewardRiskRatio(rewards,risks);
+		
+		//Display Stored Risk
+		System.out.println("\nStored Risks: ");
 		for(int i = 0; i < risks.length; i++)
 		{
-			System.out.println("Risk #" + (i + 1) + ":" + risks[i]);
+			System.out.println("Risk #" + (i + 1) + ": " + risks[i]);
 		}
+		
+		//Calculate all statistics
 		int totalRisk = totalRisk(risks);
 		int highest = highestRisk(risks);
 		double average = averageRisk(risks);
 		int lowest = lowestRisk(risks);	
-		System.out.println("Total Risk:" + totalRisk);
-		System.out.println("Highest Risk:" + highest);
-		System.out.println("Lowest Risk:" + lowest);
-		System.out.printf("Average Risk:%.2f%n", average);
+		int highRisk = highRiskTradeCount(risks);
+		int index = highestRiskIndex(risks);
+		System.out.println("\nTotal Risk: " + totalRisk);
+		System.out.println("Highest Risk: " + highest);
+		System.out.println("Occurred on Trade #" + (index + 1));
+		System.out.println("Lowest Risk: " + lowest);
+		System.out.printf("Average Risk: %.2f%n", average);
+		System.out.println("High Risk Trade Count: " + highRisk);
 
 	}
 
 }
-
