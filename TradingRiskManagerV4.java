@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class TradingRiskManagerV4 {
 	
-	// Calculates users Total Risk
+	// Calculates total risk across all trades
 	public static int totalRisk(int[] risks) 
 	{
 		int total = 0;
@@ -16,7 +16,7 @@ public class TradingRiskManagerV4 {
 	// Calculates users highest risk
 	public static int highestRisk(int[] risks) 
 	{
-		int highest = 0;
+		int highest = risks[0];
 		for(int i = 0; i < risks.length; i++)
 		{
 			if(highest < risks[i])
@@ -79,7 +79,7 @@ public class TradingRiskManagerV4 {
 	}
 	
 	//Calculates users Risk:Reward Ratio
-	public static void rewardRiskRatio(double[]rewards, int[]risks)
+	public static void rewardRiskRatio(double[] rewards, int[] risks)
 	{
 		for(int i = 0; i < risks.length; i++)
 		{
@@ -88,6 +88,22 @@ public class TradingRiskManagerV4 {
 			System.out.printf("Trade #%d Ratio: %.2f%n",(i + 1),ratio);
 		}
 		
+	}
+	//Returns the index of the trade with the best reward-to-risk ratio
+	public static int bestRatioIndex(double[] rewards, int[] risks)
+	{
+		double bestRatio = rewards[0] / risks[0];
+		int bestIndex= 0;
+		for(int i = 0; i < risks.length; i++)
+		{
+			double currentRatio = rewards[i] / risks[i];
+			if(currentRatio > bestRatio)
+			{
+				bestRatio = currentRatio;
+				bestIndex = i;
+			}
+		}
+		return bestIndex;
 	}
 	public static void main(String[] args) {
 		//Scanner for user input
@@ -124,17 +140,16 @@ public class TradingRiskManagerV4 {
 		}
 		
 		//Display Risk:Reward Ratio
-		System.out.println("\nRisk/Reward Ratio");
-		System.out.println("------------------");
+		System.out.println("\nRisk/Reward Ratios:");
 		rewardRiskRatio(rewards,risks);
-		
+		System.out.println("------------------");
 		//Display Stored Risk
-		System.out.println("\nStored Risks: ");
+		System.out.println("Stored Risks: ");
 		for(int i = 0; i < risks.length; i++)
 		{
 			System.out.println("Risk #" + (i + 1) + ": " + risks[i]);
 		}
-		
+		System.out.println("------------------");
 		//Calculate all statistics
 		int totalRisk = totalRisk(risks);
 		int highest = highestRisk(risks);
@@ -142,9 +157,13 @@ public class TradingRiskManagerV4 {
 		int lowest = lowestRisk(risks);	
 		int highRisk = highRiskTradeCount(risks);
 		int index = highestRiskIndex(risks);
-		System.out.println("\nTotal Risk: " + totalRisk);
+		int bestIndex = bestRatioIndex(rewards,risks);
+		double ratioBest = rewards[bestIndex] / risks[bestIndex];
+		System.out.println("Trade Statistics:");
+		System.out.println("Total Risk: " + totalRisk);
 		System.out.println("Highest Risk: " + highest);
 		System.out.println("Occurred on Trade #" + (index + 1));
+		System.out.printf("Trade #%d had the best ratio: %.2f%n",(bestIndex + 1), ratioBest);
 		System.out.println("Lowest Risk: " + lowest);
 		System.out.printf("Average Risk: %.2f%n", average);
 		System.out.println("High Risk Trade Count: " + highRisk);
@@ -152,3 +171,4 @@ public class TradingRiskManagerV4 {
 	}
 
 }
+
