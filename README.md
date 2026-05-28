@@ -1,117 +1,94 @@
 # Trading Risk Manager
 
-Trading Risk Manager is a Java console application developed while learning Java programming fundamentals.
+Trading Risk Manager is a Java console application built while learning Java fundamentals and problem-solving with arrays, loops, methods, and data analysis.
 
-The project evolved through multiple versions, with each version introducing more advanced programming concepts such as methods, loops, arrays, statistics calculations, and multi-trade analysis.
+The program allows users to enter multiple trades, analyze trading risk statistics, and calculate reward-to-risk ratios for each trade.
 
----
+# Features
 
-## Features
+## Trade Input System
+- User selects how many trades to analyze
+- Stores trade risks using arrays
+- Stores reward targets using arrays
 
-### Version 1
+## Risk Analysis
+- Calculates total risk across all trades
+- Finds highest risk trade
+- Finds lowest risk trade
+- Calculates average risk
+- Counts number of high-risk trades
 
-* Calculates maximum allowed risk using the 2% rule
-* Calculates reward-to-risk ratio
-* Approves or rejects trades
-* Single-trade analysis
+## Reward-to-Risk Analysis
+- Calculates reward-to-risk ratio for every trade
+- Finds which trade had the best reward-to-risk ratio
+- Displays which trade contained the highest risk
 
-### Version 2
+## Risk Classification
+Trades are automatically categorized as:
+- Low Risk
+- Medium Risk
+- High Risk
 
-* Multi-trade analysis
-* Running total risk tracking
-* Approved/rejected trade counters
-* Trade-by-trade processing using loops
+# Java Concepts Practiced
+- Arrays
+- Parallel arrays
+- Methods
+- Return values
+- Loops
+- Searching algorithms
+- Index tracking
+- Scanner input
+- Conditional statements
+- Formatted output using `printf`
+- Reusable program structure
 
-### Version 3
+# Example Output
 
-* Position sizing calculator
-* Risk-per-share calculations
-* Entry and stop-loss validation
-* Rounded position size recommendations
-
-### Version 4
-
-* Dynamic trade storage using arrays
-* Risk and reward tracking
-* Reward-to-risk ratio calculations
-* Total risk calculation
-* Highest risk tracking
-* Lowest risk tracking
-* Average risk calculation
-* High-risk trade counter
-* Highest-risk trade index tracking
-* Reusable methods for statistics processing
-* Dynamic loops using `.length`
-
----
-
-## Concepts Practiced
-
-* Variables and data types
-* Scanner user input
-* If/else statements
-* For loops
-* While loops
-* Methods and return values
-* Arrays
-* Array processing
-* Running totals
-* Highest/lowest value tracking
-* Average calculations
-* Reusable program design
-* Code refactoring
-* Formatted decimal output using `printf`
-
----
-
-## Technologies Used
-
-* Java
-* Eclipse IDE
-
----
-
-## Example Output
-
-How many trades? 3
-
-Enter risk for trade #1: 100
-Enter your targeted reward: 300
-Medium Risk
-
-Enter risk for trade #2: 250
-Enter your targeted reward: 750
-High Risk
-
-Enter risk for trade #3: 75
-Enter your targeted reward: 150
-Low Risk
-
-## Risk/Reward Ratios
-
+```text
+Risk/Reward Ratios:
 Trade #1 Ratio: 3.00
-Trade #2 Ratio: 3.00
-Trade #3 Ratio: 2.00
+Trade #2 Ratio: 3.21
+------------------
 
 Stored Risks:
-Risk #1: 100
-Risk #2: 250
-Risk #3: 75
+Risk #1: 300
+Risk #2: 140
+------------------
 
-Total Risk: 425
-Highest Risk: 250
-Occurred on Trade #2
-Lowest Risk: 75
-Average Risk: 141.67
+Trade Statistics:
+------------------
+Total Risk: 440
+Highest Risk: 300
+Occurred on Trade #1
+Trade #2 had the best ratio: 3.21
+Lowest Risk: 140
+Average Risk: 220.00
 High Risk Trade Count: 1
+```
+# Future Improvements
 
----
+- Save trade history to files
+- Add win/loss tracking
+- Add account balance tracking
+- Export trade reports
+- Add graphical user interface (GUI)
+- Add trade timestamps
+- Store trade history using objects/classes
 
-## Future Improvements
+# Technologies Used
+- Java
+- Eclipse IDE
 
-* Save trade history to files
-* Add win/loss tracking
-* Add percentage-based risk calculations
-* Add graphical user interface (GUI)
-* Store trade timestamps
-* Export trade statistics
+# Versions
+
+## V1
+Basic single-trade risk calculator
+
+## V2
+Added loops and multi-trade analysis
+
+## V3
+Added position sizing and advanced calculations
+
+## V4
+Added arrays, reusable methods, ratio analysis, and trade statistics
