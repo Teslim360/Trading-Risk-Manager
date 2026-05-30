@@ -288,8 +288,8 @@ public class TradingRiskManagerV5 {
 		}
 		
 		//Display Risk:Reward Ratio
-		System.out.println("------------------");
-		System.out.println("\nRisk/Reward Ratios:");
+		System.out.println("\n------------------");
+		System.out.println("Risk/Reward Ratios:");
 		System.out.println("------------------");
 		rewardRiskRatio(rewards,risks);
 		System.out.println("------------------");
@@ -328,15 +328,15 @@ public class TradingRiskManagerV5 {
 		System.out.println("Total Risk: " + totalRisk);
 		System.out.println("Highest Risk: " + highest);
 		System.out.println("Occurred on Trade #" + (index + 1));
-		System.out.println("Highest Risk Ticker: " + highestRisk);
+		System.out.println("\nHighest Risk Ticker: " + highestRisk);
 		System.out.println("Lowest Risk Ticker: " + lowestRisk);
-		System.out.println("Highest Reward Ticker: " + highestReward);
+		System.out.println("\nHighest Reward Ticker: " + highestReward);
 		System.out.println("Lowest Reward Ticker: " + lowestReward);
-		System.out.println("Best Ratio Ticker: " + bestTickRatio);
+		System.out.println("\nBest Ratio Ticker: " + bestTickRatio);
 		System.out.println("Worst Ratio Ticker: " + worseTickRatio);
-		System.out.printf("Trade #%d had the best ratio: %.2f%n",(bestIndex + 1), ratioBest);
+		System.out.printf("\nTrade #%d had the best ratio: %.2f%n",(bestIndex + 1), ratioBest);
 		System.out.printf("Trade #%d had the worst ratio: %.2f%n",(lowIndex + 1), worseRatio);
-		System.out.println("Lowest Risk: " + lowest);
+		System.out.println("\nLowest Risk: " + lowest);
 		System.out.printf("Average Risk: %.2f%n", average);
 		System.out.println("High Risk Trade Count: " + highRisk);
 		System.out.println("Medium Risk Trade Count: " + midRisk);
@@ -345,4 +345,5 @@ public class TradingRiskManagerV5 {
 	}
 
 }
+
 
