@@ -186,15 +186,6 @@ public class Main {
 				default:
 					System.out.println("Invalid option.");
 			}			
-//		Trade trade1 = new Trade("SPY","Call", 727.00, 727.33, 726.33, 729.33, "ORB Retest");
-//		Trade trade2 = new Trade("TSLA", "Puts", 390.00, 390.21, 389.21, 392.21, "PDL Retest");
-//		Trade trade3 = new Trade("APPL", "Calls", 310.00, 310.65, 309.65, 312.65, "PMH Retest");
-//		manager.addTrade(trade1);
-//		manager.addTrade(trade2);
-//		manager.addTrade(trade3);
-//		manager.printFirstTrade();
-//		manager.printAllTrades();
-			
 			}
 		}
 	}
