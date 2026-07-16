@@ -1,30 +1,51 @@
-# Trading Risk Manager Version 6
+# Trading Risk Manager — Version 6
 
 ## Overview
 
-A Java console application designed to manage and journal options trades while demonstrating object-oriented programming principles and file persistence.
+A Java console application for recording, searching, editing, and managing options trades. Trade data is saved to a CSV file and automatically loaded when the program starts.
 
 ## Features
 
-- Add Trade
-- Print All Trades
-- Search by Ticker
-- Edit Trade
-- Remove Trade
-- Automatic Trade IDs
-- Save to CSV
-- Load from CSV
-- Persistent Storage
+- Add new trades
+- Display all trades
+- Search trades by ticker
+- Edit trades using a unique Trade ID
+- Remove trades using a unique Trade ID
+- Automatically generate Trade IDs
+- Save trades to CSV
+- Load saved trades automatically
+- Preserve data between program sessions
 
-## Concepts Demonstrated
+## Project Structure
 
-- Object-Oriented Programming
+- `Main.java` — Runs the menu and handles user input
+- `Trade.java` — Represents one trade and contains its fields, constructors, getters, setters, and formatting methods
+- `TradeManager.java` — Stores, searches, edits, removes, saves, and loads trades
+
+## Java Concepts Demonstrated
+
+- Object-oriented programming
 - Encapsulation
-- Constructor Overloading
-- ArrayLists
-- CRUD Operations
+- Constructor overloading
+- Getters and setters
+- Method overriding
+- Static fields
+- `ArrayList`
+- Enhanced and indexed `for` loops
+- `Scanner`
+- `while` loops and `switch` statements
+- Exception handling
 - File I/O
-- BufferedReader
-- FileWriter
-- Exception Handling
-- CSV Serialization
+- `FileWriter`
+- `BufferedReader`
+- CSV serialization and parsing
+
+## Future Improvements
+
+- Trade outcome tracking
+- Profit and loss calculations
+- Win rate and expectancy
+- Position-size calculator
+- Statistics dashboard
+- Graphical user interface
+- Database storage
